@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Calculator.Client";
+
+package calculator;
+
+service Calculator {
+  rpc SendExpression (ExpressionMessage) returns (ResultMessage);
+}
+
+message ExpressionMessage {
+  string expression = 1;
+}
+
+message ResultMessage {
+  string result = 1;
+}
